@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		BDDE0EDA1BE17DAF00E917D5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BDDE0ED91BE17DAF00E917D5 /* main.m */; };
+		BDDE0EE11BE17E3F00E917D5 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDDE0EE01BE17E3F00E917D5 /* Carbon.framework */; };
+		BDDE0EE31BE17E4400E917D5 /* QuickTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDDE0EE21BE17E4400E917D5 /* QuickTime.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,8 @@
 /* Begin PBXFileReference section */
 		BDDE0ED61BE17DAF00E917D5 /* qtascii */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = qtascii; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDDE0ED91BE17DAF00E917D5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BDDE0EE01BE17E3F00E917D5 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		BDDE0EE21BE17E4400E917D5 /* QuickTime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickTime.framework; path = System/Library/Frameworks/QuickTime.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +36,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDDE0EE31BE17E4400E917D5 /* QuickTime.framework in Frameworks */,
+				BDDE0EE11BE17E3F00E917D5 /* Carbon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +47,8 @@
 		BDDE0ECD1BE17DAF00E917D5 = {
 			isa = PBXGroup;
 			children = (
+				BDDE0EE21BE17E4400E917D5 /* QuickTime.framework */,
+				BDDE0EE01BE17E3F00E917D5 /* Carbon.framework */,
 				BDDE0ED81BE17DAF00E917D5 /* qtascii */,
 				BDDE0ED71BE17DAF00E917D5 /* Products */,
 			);
@@ -207,14 +215,23 @@
 		BDDE0EDE1BE17DAF00E917D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_MODULES = NO;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = i386;
 			};
 			name = Debug;
 		};
 		BDDE0EDF1BE17DAF00E917D5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_MODULES = NO;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = i386;
 			};
 			name = Release;
 		};
