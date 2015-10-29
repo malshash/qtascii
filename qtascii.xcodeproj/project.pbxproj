@@ -7,12 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD2D32A51BE1B25D006FFF8A /* QuickTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDDE0EE21BE17E4400E917D5 /* QuickTime.framework */; };
+		BD2D32A61BE1B25D006FFF8A /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDDE0EE01BE17E3F00E917D5 /* Carbon.framework */; };
+		BD2D32AE1BE1B2DE006FFF8A /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = BD2D32AD1BE1B2DE006FFF8A /* main.c */; };
 		BDDE0EDA1BE17DAF00E917D5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BDDE0ED91BE17DAF00E917D5 /* main.m */; };
 		BDDE0EE11BE17E3F00E917D5 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDDE0EE01BE17E3F00E917D5 /* Carbon.framework */; };
 		BDDE0EE31BE17E4400E917D5 /* QuickTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDDE0EE21BE17E4400E917D5 /* QuickTime.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		BD2D32A71BE1B25D006FFF8A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		BDDE0ED41BE17DAF00E917D5 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -25,6 +37,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BD2D32AB1BE1B25D006FFF8A /* qtascii-bw */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "qtascii-bw"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD2D32AD1BE1B2DE006FFF8A /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		BDDE0ED61BE17DAF00E917D5 /* qtascii */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = qtascii; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDDE0ED91BE17DAF00E917D5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BDDE0EE01BE17E3F00E917D5 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
@@ -32,6 +46,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		BD2D32A41BE1B25D006FFF8A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD2D32A51BE1B25D006FFF8A /* QuickTime.framework in Frameworks */,
+				BD2D32A61BE1B25D006FFF8A /* Carbon.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BDDE0ED31BE17DAF00E917D5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -44,11 +67,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BD2D32AC1BE1B26F006FFF8A /* qtascii-bw */ = {
+			isa = PBXGroup;
+			children = (
+				BD2D32AD1BE1B2DE006FFF8A /* main.c */,
+			);
+			name = "qtascii-bw";
+			path = qtascii;
+			sourceTree = "<group>";
+		};
 		BDDE0ECD1BE17DAF00E917D5 = {
 			isa = PBXGroup;
 			children = (
 				BDDE0EE21BE17E4400E917D5 /* QuickTime.framework */,
 				BDDE0EE01BE17E3F00E917D5 /* Carbon.framework */,
+				BD2D32AC1BE1B26F006FFF8A /* qtascii-bw */,
 				BDDE0ED81BE17DAF00E917D5 /* qtascii */,
 				BDDE0ED71BE17DAF00E917D5 /* Products */,
 			);
@@ -58,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				BDDE0ED61BE17DAF00E917D5 /* qtascii */,
+				BD2D32AB1BE1B25D006FFF8A /* qtascii-bw */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -73,6 +107,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		BD2D32A11BE1B25D006FFF8A /* qtascii-bw */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BD2D32A81BE1B25D006FFF8A /* Build configuration list for PBXNativeTarget "qtascii-bw" */;
+			buildPhases = (
+				BD2D32A21BE1B25D006FFF8A /* Sources */,
+				BD2D32A41BE1B25D006FFF8A /* Frameworks */,
+				BD2D32A71BE1B25D006FFF8A /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "qtascii-bw";
+			productName = qtascii;
+			productReference = BD2D32AB1BE1B25D006FFF8A /* qtascii-bw */;
+			productType = "com.apple.product-type.tool";
+		};
 		BDDE0ED51BE17DAF00E917D5 /* qtascii */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BDDE0EDD1BE17DAF00E917D5 /* Build configuration list for PBXNativeTarget "qtascii" */;
@@ -117,11 +168,20 @@
 			projectRoot = "";
 			targets = (
 				BDDE0ED51BE17DAF00E917D5 /* qtascii */,
+				BD2D32A11BE1B25D006FFF8A /* qtascii-bw */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		BD2D32A21BE1B25D006FFF8A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD2D32AE1BE1B2DE006FFF8A /* main.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BDDE0ED21BE17DAF00E917D5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -133,6 +193,29 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		BD2D32A91BE1B25D006FFF8A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_MODULES = NO;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = i386;
+			};
+			name = Debug;
+		};
+		BD2D32AA1BE1B25D006FFF8A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_MODULES = NO;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = i386;
+			};
+			name = Release;
+		};
 		BDDE0EDB1BE17DAF00E917D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -238,6 +321,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		BD2D32A81BE1B25D006FFF8A /* Build configuration list for PBXNativeTarget "qtascii-bw" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD2D32A91BE1B25D006FFF8A /* Debug */,
+				BD2D32AA1BE1B25D006FFF8A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		BDDE0ED11BE17DAF00E917D5 /* Build configuration list for PBXProject "qtascii" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -254,6 +346,7 @@
 				BDDE0EDF1BE17DAF00E917D5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

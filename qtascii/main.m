@@ -73,14 +73,15 @@
  */
 
 #import <Foundation/Foundation.h>
-#include <stdio.h>
-#include <QuickTime/QuickTime.h>
+#import <QuickTime/QuickTime.h>
+#import <stdio.h>
+#import <getopt.h>
 
 #define USE_COLOR
 
 #define ESC	27
 
-#define	SCALE	(1)
+#define	SCALE	(1.86)
 #if 0
 // 16x9
 #define	WIDTH	((float)(80*SCALE))
@@ -291,6 +292,43 @@ int main(int argc, const char * argv[]) {
         MovieDrawingCompleteUPP	myDrawCompleteProc = NewMovieDrawingCompleteUPP(DrawCompleteProc);
         int i;
         CFStringRef inPath;
+        NSString *moviePath = nil;
+        BOOL useColor = NO;
+        
+        int option = -1;
+        static struct option longopts[] =
+        {
+            {"movie", required_argument, NULL, 'm'},
+            {"color", no_argument, NULL, 'c'},
+            {0, 0, 0, 0}
+        };
+        const char *shortopts = "m:c:";
+        while ((option = getopt_long(argc, argv, shortopts, longopts, NULL)) != -1)
+        {
+            switch (option)
+            {
+                case 'm':
+                {
+                    moviePath = [NSString stringWithCString:optarg encoding:NSMacOSRomanStringEncoding];
+                    break;
+                }
+                case 'c':
+                {
+                    useColor = YES;
+                    break;
+                }
+            }
+        }
+        
+        if (moviePath)
+        {
+        }
+        else
+        {
+            printf("Usage:  qtascii -m [movie_file] -c\n");
+            printf("        Plays the specified movie. --color (-c_) option plays in color\n");
+            return -1;
+        }
         
         /* build the luminance value to ASCII value conversion table
          Y			  ASCII
@@ -330,12 +368,15 @@ int main(int argc, const char * argv[]) {
         printf("%c[0J", ESC);
         
         // Convert movie path to CFString
-        if (argc > 1) {
-            inPath = CFStringCreateWithCString(NULL, argv[1], CFStringGetSystemEncoding());
-            if (!inPath) { printf("Could not get CFString\n"); goto bail; }
-        } else { printf("You need to at least type a path to a .mov file!\n"); goto bail; }
+//        if (argc > 1) {
+//            
+//            if (!inPath) { printf("Could not get CFString\n"); goto bail; }
+//        } else { printf("You need to at least type a path to a .mov file!\n"); goto bail; }
         
-        result = NativePathNameToFSSpec(argv[1], &theFSSpec, 0 /* flags */);
+        inPath = CFStringCreateWithCString(NULL, [moviePath cStringUsingEncoding:NSUTF8StringEncoding], CFStringGetSystemEncoding());
+        if (!inPath) { printf("Could not get CFString\n"); goto bail; }
+        
+        result = NativePathNameToFSSpec([moviePath cStringUsingEncoding:NSUTF8StringEncoding], &theFSSpec, 0 /* flags */);
         if (result) {printf("NativePathNameToFSSpec failed %d\n", result); goto bail; }
         result = OpenMovieFile(&theFSSpec, &resRefNum, 0);
         if (result) {printf("OpenMovieFile failed %d\n", result); goto bail; }

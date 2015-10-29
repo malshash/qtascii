@@ -61,6 +61,16 @@
             ReferencedContainer = "container:qtascii.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <CommandLineArguments>
+         <CommandLineArgument
+            argument = "-m"
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "&quot;/Users/clong/Music/iTunes/iTunes Media/TV Shows/King of the Hill/Season 12/01 Suite Smells of Excess.m4v&quot;"
+            isEnabled = "YES">
+         </CommandLineArgument>
+      </CommandLineArguments>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
